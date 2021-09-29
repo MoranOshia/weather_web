@@ -1,0 +1,75 @@
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #search {
+            text-align: center;
+            padding-top: 100px;
+        }
+        #telaviv {
+           width: 240px;
+           display: table-cell;
+           border: 1px solid #4e1f9d;
+           color: #4B515D;
+           border-radius: 35px;
+           margin-right: 70px;
+           background-color: #F0FFFF;
+
+
+        }
+          #newyork {
+           display: table-cell;
+           border: 1px solid #4e1f9d;
+           color: #4B515D;
+           border-radius: 35px;
+           background-color: #F0FFFF;
+           margin-left:20px;
+
+
+
+        }
+
+        #main {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+             padding-top:20px;
+            padding-left:250px;
+            padding-right:15px;
+        }
+        #inside {
+            display: inline-block;
+        }
+        .header_search {
+           margin-top: -50px;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+        }
+
+        input[type='text'] {
+            width: 30%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        input[type='submit'] {
+            width: 30%;
+            padding: 5px;
+            background: black;
+            color: white;
+            text-transform: uppercase;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        body {
+            background-image: url("back.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }

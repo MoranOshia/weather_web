@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link type="text/css" rel="stylesheet" href="https://get.mavo.io/stable/mavo.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://get.mavo.io/stable/mavo.min.css" />
+	 <link type="text/css" rel="stylesheet" href="../static/weather/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="../static/weather/css/weather.css" />
+    <title>Weather</title>
+
+</head>
+<body>
+<div id="main">
+
+    <div class="con">
+      <div  class="child">
+
+	<article class="max-w-sm mx-auto mt-5 bg-white rounded shadow">
+		<section class="px-2 py-4 text-center bg-teal-400 text-gray-800">
+			<p class="text-3xl font-medium">
+				Weather in
+				<span class="font-extrabold"></span>
+				 ירושלים, ישראל
+			</p>
+		</section>
+		<section class="flex items-center justify-center">
+			<img src="{{picta}}" alt="picta">
+			<p class="font-bold text-5xl ml-1">
+				{{ taData.0 }}°C
+				<span class="border-b-4 border-teal-400"></span>
+			</p>
+		</section>
+		<p class="mt-1 text-lg text-gray-700 font-medium text-center">{{ taData.4 }}</p>
+		<p class="text-sm text-center text-gray-600"><time datetime="[$today]">{{ taData.6 }}</time></p>
+		<section class="mt-5 py-3 px-2 flex justify-around text-gray-700 bg-teal-400">
+			<p class="wind flex items-center">{{ taData.2 }} KM/H</p>
+			<p class="humidity flex items-center">{{ taData.1 }}%</p>
+			<p class="pressure flex items-center">Precipitation: {{ taData.3 }}%</p>
+		</section>
+	</article>
+</div>
+     <div  class="child">
+
+	<article class="max-w-sm mx-auto mt-5 bg-white rounded shadow">
+		<section class="px-2 py-4 text-center bg-teal-400 text-gray-800">
+			<p class="text-3xl font-medium">
+				Weather in
+				<span class="font-extrabold"></span>
+				ניו יורק, ארצות הברית
+			</p>
+		</section>
+		<section class="flex items-center justify-center">
+			<img src="{{picnyc}}" alt="picnyc">
+			<p class="font-bold text-5xl ml-1">
+				{{ nycData.0 }}°C
+				<span nycData="border-b-4 border-teal-400"></span>
+			</p>
+		</section>
+		<p class="mt-1 text-lg text-gray-700 font-medium text-center">{{ nycData.4 }}</p>
+		<p class="text-sm text-center text-gray-600"><time datetime="[$today]">{{ nycData.6 }}</time></p>
+		<section class="mt-5 py-3 px-2 flex justify-around text-gray-700 bg-teal-400">
+			<p class="wind flex items-center">{{ nycData.2 }} KM/H</p>
+			<p class="humidity flex items-center">{{ nycData.1 }}%</p>
+			<p class="pressure flex items-center">Precipitation: {{ nycData.3 }}%</p>
+		</section>
+	</article>
+</div>
+</div>
+
+</div>
+<div id="search">
+    <h1 class="header_search">Search Location</h1>
+    <form method="GET">
+        <div>
+            <label for="city" ></label>
+            <input type="text" id="city" value="{{ request.GET.city }}" placeholder="Enter City..." name="city" required/>
+        </div>
+        <input type="submit" value="Submit"/>
+    </form>
+    {% if flag == False %}
+        <h3>The city you entered is not right</h3>
+    {% else %}
+    {% if result %}
+        <div class="con_result">
+      <div  class="child_result">
+
+	<article class="max-w-sm mx-auto mt-5 bg-white rounded shadow">
+		<section class="px-2 py-4 text-center bg-teal-400 text-gray-800">
+			<p class="text-3xl font-medium">
+				Weather in
+				<span class="font-extrabold"></span>
+				{{ result.5 }}
+			</p>
+		</section>
+		<section class="flex items-center justify-center">
+			<img src="{{pic}}" alt="pic">
+			<p class="font-bold text-5xl ml-1">
+				{{ result.0 }}°C
+				<span class="border-b-4 border-teal-400"></span>
+			</p>
+		</section>
+		<p class="mt-1 text-lg text-gray-700 font-medium text-center">{{ result.4 }}</p>
+		<p class="text-sm text-center text-gray-600"><time datetime="[$today]">{{ result.6 }}</time></p>
+		<section class="mt-5 py-3 px-2 flex justify-around text-gray-700 bg-teal-400">
+			<p class="wind flex items-center">{{ result.2 }} KM/H   </p>
+			<p class="humidity flex items-center">{{ result.1 }}%   </p>
+			<p class="pressure flex items-center">   Precipitation: {{ result.3 }}%</p>
+		</section>
+	</article>
+</div>
+
+
+</div>
+
+    {% endif %}
+    {% endif %}
+</div>
+</body>
+</html>
